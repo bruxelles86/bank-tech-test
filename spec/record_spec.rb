@@ -28,7 +28,7 @@ describe Record do
     record.store('10/06/2017', 10, 0, 100)
     expect { record.print_statement }.to output(
       'Date || Credit || Debit || Balance'\
-    "\n10/06/2017 || 10 ||  || 100\n"
+    "\n10/06/2017 || 10.00 ||  || 100.00\n"
     ).to_stdout
   end
 
@@ -36,7 +36,7 @@ describe Record do
     record.store('10/06/2017', 0, 50, 200)
     expect { record.print_statement }.to output(
       'Date || Credit || Debit || Balance'\
-    "\n10/06/2017 ||  || 50 || 200\n"
+    "\n10/06/2017 ||  || 50.00 || 200.00\n"
     ).to_stdout
   end
 end
