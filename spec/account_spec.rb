@@ -29,5 +29,11 @@ describe Account do
     expect(account.balance.amount).to eq(-10)
   end
 
-  it 'adds withdrawal details to the record of deposits and withdrawals'
+  it 'adds withdrawal details to the record of deposits and withdrawals' do
+    account.withdraw(50)
+    expect(account.record.transactions[0][:date]).to eq(Time.now.strftime("%m/%d/%Y"))
+    expect(account.record.transactions[0][:credit]).to eq(0)
+    expect(account.record.transactions[0][:debit]).to eq(50)
+    expect(account.record.transactions[0][:balance]).to eq(-50)
+  end
 end

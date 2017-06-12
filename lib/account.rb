@@ -14,5 +14,6 @@ class Account
 
   def withdraw(withdrawal_amount)
     @balance.reduce(withdrawal_amount)
+    @record.store(Time.now.strftime("%m/%d/%Y"), 0, withdrawal_amount, @balance.amount)
   end
 end
