@@ -7,5 +7,6 @@ class Record
   end
 
   def store(date, credit_amount, debit_amount, new_balance)
+    @transactions.push({date: date, credit: credit_amount, debit: debit_amount, balance: new_balance })
   end
 end
