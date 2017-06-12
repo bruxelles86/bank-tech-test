@@ -12,6 +12,8 @@ class Record
 
   def print_statement
     puts "Date || Credit || Debit || Balance"
-    
+    @transactions.each do |row|
+      puts "#{row[:date]} || #{row[:credit] > 0 ? row[:credit] : ''} || #{row[:debit] > 0 ? row[:debit] : ''} || #{row[:balance]}"
+    end
   end
 end

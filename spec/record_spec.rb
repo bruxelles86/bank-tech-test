@@ -24,8 +24,8 @@ describe Record do
     expect(record.transactions[0][:balance]).to eq(0)
   end
 
-  it 'correctly prints an account statement to STDOUT' do
+  it 'correctly prints account statement deposit details to STDOUT' do
     record.store('10/06/2017', 10, 0, 100)
-    expect { record.print_statement }.to output("Date || Credit || Debit || Balance\n10/06/2017 || 10 || 0 || 100\n").to_stdout
+    expect { record.print_statement }.to output("Date || Credit || Debit || Balance\n10/06/2017 || 10 ||  || 100\n").to_stdout
   end
 end
