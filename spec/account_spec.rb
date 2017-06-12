@@ -1,13 +1,15 @@
 require 'account'
 
 describe Account do
-  let(:account) { described_class.new(Balance) }
+  let(:account) { described_class.new(Balance, Record) }
 
   it 'has a balance' do
     expect(account.balance).to be_kind_of(Balance)
   end
 
-  it 'has a record of deposits and withdrawals'
+  it 'has a record of deposits and withdrawals' do
+    expect(account.record).to be_kind_of(Record)
+  end
 
   it 'increments the balance by the correct amount after a deposit'
 
