@@ -26,11 +26,17 @@ describe Record do
 
   it 'correctly prints account statement deposit details to STDOUT' do
     record.store('10/06/2017', 10, 0, 100)
-    expect { record.print_statement }.to output("Date || Credit || Debit || Balance\n10/06/2017 || 10 ||  || 100\n").to_stdout
+    expect { record.print_statement }.to output(
+      'Date || Credit || Debit || Balance'\
+    "\n10/06/2017 || 10 ||  || 100\n"
+    ).to_stdout
   end
 
   it 'correctly prints account statement withdrawal details to STDOUT' do
     record.store('10/06/2017', 0, 50, 200)
-    expect { record.print_statement }.to output("Date || Credit || Debit || Balance\n10/06/2017 ||  || 50 || 200\n").to_stdout
+    expect { record.print_statement }.to output(
+      'Date || Credit || Debit || Balance'\
+    "\n10/06/2017 ||  || 50 || 200\n"
+    ).to_stdout
   end
 end

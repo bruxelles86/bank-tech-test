@@ -1,8 +1,8 @@
 require_relative './balance.rb'
 require_relative './record.rb'
 
+# Accounts have balances and records. They change balances and log transactions.
 class Account
-
   attr_reader :balance, :record
 
   def initialize(balance, record)
@@ -12,11 +12,13 @@ class Account
 
   def deposit(deposit_amount)
     @balance.increment(deposit_amount)
-    @record.store(Time.now.strftime("%m/%d/%Y"), deposit_amount, 0, @balance.amount)
+    @record.store(Time.now.strftime('%m/%d/%Y'), deposit_amount,
+                  0, @balance.amount)
   end
 
   def withdraw(withdrawal_amount)
     @balance.reduce(withdrawal_amount)
-    @record.store(Time.now.strftime("%m/%d/%Y"), 0, withdrawal_amount, @balance.amount)
+    @record.store(Time.now.strftime('%m/%d/%Y'), 0,
+                  withdrawal_amount, @balance.amount)
   end
 end

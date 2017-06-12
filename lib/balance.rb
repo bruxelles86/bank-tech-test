@@ -1,5 +1,5 @@
+# Balances record current balance, which can be incremented or reduced
 class Balance
-
   attr_reader :amount
 
   def initialize
