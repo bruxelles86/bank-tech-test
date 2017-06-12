@@ -6,4 +6,7 @@ class Balance
     @amount = 0
   end
 
+  def increment(deposit_amount)
+    @amount += deposit_amount
+  end
 end
