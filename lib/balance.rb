@@ -9,4 +9,8 @@ class Balance
   def increment(deposit_amount)
     @amount += deposit_amount
   end
+
+  def reduce(withdrawal_amount)
+    @amount -= withdrawal_amount
+  end
 end

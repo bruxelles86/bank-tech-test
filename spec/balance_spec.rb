@@ -11,4 +11,9 @@ describe Balance do
     balance.increment(10)
     expect(balance.amount).to eq(10)
   end
+
+  it 'reduces by amounts withdrawn' do
+    balance.reduce(10)
+    expect(balance.amount).to eq(-10)
+  end
 end

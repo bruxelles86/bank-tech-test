@@ -18,7 +18,10 @@ describe Account do
 
   it 'adds deposit details to the record of deposits and withrawals'
 
-  it 'reduces the balance by the correct amount after a withdrawal'
+  it 'reduces the balance by the correct amount after a withdrawal' do
+    account.withdraw(10)
+    expect(account.balance.amount).to eq(-10)
+  end
 
   it 'adds withdrawal details to the record of deposits and withdrawals'
 end
