@@ -1,9 +1,9 @@
 class Record
 
-attr_reader :transactions
+  attr_reader :transactions
 
-def initialize
-  @transactions =[]
-end
+  def initialize
+    @transactions =[]
+  end
 
 end

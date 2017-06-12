@@ -1,7 +1,7 @@
 require 'account'
 
 describe Account do
-  let(:account) { described_class.new }
+  let(:account) { described_class.new(Balance) }
 
   it 'has a balance' do
     expect(account.balance).to be_kind_of(Balance)
