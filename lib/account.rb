@@ -1,3 +1,6 @@
+require_relative './balance.rb'
+require_relative './record.rb'
+
 class Account
 
   attr_reader :balance, :record
