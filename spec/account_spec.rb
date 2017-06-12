@@ -18,10 +18,10 @@ describe Account do
 
   it 'adds deposit details to the record of deposits and withrawals' do
     account.deposit(10)
-    expect(account.record.transactions[0].date).to eq(Time.now.strftime("%m/%d/%Y"))
-    expect(account.record.transactions[0].credit).to eq(10)
-    expect(account.record.transactions[0].debit).to eq(0)
-    expect(account.record.transactions[0].balance).to eq(10)
+    expect(account.record.transactions[0][:date]).to eq(Time.now.strftime("%m/%d/%Y"))
+    expect(account.record.transactions[0][:credit]).to eq(10)
+    expect(account.record.transactions[0][:debit]).to eq(0)
+    expect(account.record.transactions[0][:balance]).to eq(10)
   end
 
   it 'reduces the balance by the correct amount after a withdrawal' do

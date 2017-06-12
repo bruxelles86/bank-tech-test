@@ -6,4 +6,6 @@ class Record
     @transactions =[]
   end
 
+  def store(date, credit_amount, debit_amount, new_balance)
+  end
 end
