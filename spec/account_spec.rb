@@ -11,7 +11,10 @@ describe Account do
     expect(account.record).to be_kind_of(Record)
   end
 
-  it 'increments the balance by the correct amount after a deposit'
+  it 'increments the balance by the correct amount after a deposit' do
+    account.deposit(10)
+    expect(account.balance).to be(10)
+  end
 
   it 'adds deposit details to the record of deposits and withrawals'
 
