@@ -6,4 +6,9 @@ describe Balance do
   it 'initializes with an amount of zero' do
     expect(balance.amount).to eq(0)
   end
+
+  it 'increments by amounts deposited' do
+    balance.increment(10)
+    expect(balance.amount).to eq(10)
+  end
 end
